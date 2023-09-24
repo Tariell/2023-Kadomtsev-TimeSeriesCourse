@@ -54,7 +54,8 @@ def plot_ts_set(ts_set, title='Input Time Series Set'):
                       legend=dict(font=dict(size=20, color='black'))
                       )
 
-    fig.show(renderer="colab")
+    # fig.show(renderer="colab")
+    fig.show()
 
 
 def plot2d(x, y, plot_title, x_title, y_title):
@@ -110,4 +111,3 @@ def plot2d(x, y, plot_title, x_title, y_title):
                       width=700)
 
     fig.show(renderer="colab")
-
