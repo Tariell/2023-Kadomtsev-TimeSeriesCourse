@@ -55,6 +55,7 @@ def plot_ts_set(ts_set, title='Input Time Series Set'):
                       legend=dict(font=dict(size=20, color='black'))
                       )
 
+    # fig.show(renderer="colab")
     fig.show()
 
 
@@ -110,6 +111,7 @@ def plot2d(x, y, plot_title, x_title, y_title):
                       paper_bgcolor='rgba(0,0,0,0)',
                       width=700)
 
+    # fig.show(renderer="colab")
     fig.show()
 
 
@@ -171,6 +173,7 @@ def mplot2d(x, y, plot_title=None, x_title=None, y_title=None, trace_titles=None
                       height=600
                       )
 
+    # fig.show(renderer="colab")
     fig.show()
 
 
@@ -220,6 +223,7 @@ def plot_bestmatch_data(ts, query):
                       showlegend=False,
                       title_x=0.5)
 
+    # fig.show(renderer="colab")
     fig.show()
 
 
@@ -242,6 +246,14 @@ def plot_bestmatch_results(ts, query, bestmatch_results):
     ts_len = ts.shape[0]
     query_len = query.shape[0]
     n_matches = len(bestmatch_results)
+
+    # fig = make_subplots(rows=n_matches+1, cols=1, shared_xaxes=True, subplot_titles=["Query"]+[f"Matching Subsequence {i+1}" for i in range(n_matches)], vertical_spacing=0.08)
+
+    # fig.add_trace(go.Scatter(x=np.arange(query_len), y=query, line=dict(color=px.colors.qualitative.Plotly[1])), row=1, col=1)
+    
+    # for i, start_idx in enumerate(bestmatch_results['index']):
+    #     end_idx = start_idx + query_len
+    #     fig.add_trace(go.Scatter(x=np.arange(query_len), y=ts[start_idx:end_idx], line=dict(color=px.colors.qualitative.Plotly[0])), row=i+2, col=1)
 
     fig = make_subplots(rows=1, cols=2, column_widths=[0.1, 0.9], subplot_titles=("Query", "Time Series"), horizontal_spacing=0.04)
 
@@ -302,4 +314,5 @@ def pie_chart(labels, values, plot_title='Pie chart'):
                       height=500
                       )
 
+    # fig.show(renderer="colab")
     fig.show()
